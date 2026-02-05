@@ -19,6 +19,22 @@ awardsItems.forEach(item => {
     });
 });
 
+
+
+new Swiper('.hero__slider', {
+    loop: true,
+    spaceBetween: 20,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    navigation: {
+        nextEl: '.hero__slider-next',
+        prevEl: '.hero__slider-prev',
+    },
+    pagination: {
+        el: '.hero__pagination',
+        clickable: true,
+    },
+});
+
 document.addEventListener('click', function (event) {
     const supportBlock = document.querySelector('.header__support');
     const supportSelected = document.querySelector('.header__support-selected');
@@ -116,5 +132,42 @@ reportsTitles.forEach(title => {
         if (reportsBlock) {
             reportsBlock.classList.toggle('active');
         }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const networkBlock = document.querySelector('.network__block');
+    const networkLine = document.querySelector('.network-line');
+    const lineIcon = document.querySelector('.network-line-icon');
+    const networkItems = document.querySelectorAll('.network__item');
+
+    window.addEventListener('scroll', () => {
+        if (!networkBlock || !lineIcon) return;
+
+        const rect = networkBlock.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        let progress = (windowHeight / 2 - rect.top) / rect.height;
+        progress = Math.max(0, Math.min(1, progress));
+        const percentage = progress * 98;
+
+        lineIcon.style.top = `${percentage}%`;
+        networkLine.style.setProperty('--line-height', `${percentage}%`);
+
+        const iconCenterY = lineIcon.getBoundingClientRect().top + (lineIcon.offsetHeight / 2);
+
+        networkItems.forEach((item) => {
+            const itemContent = item.querySelector('.network__item-content');
+            const itemRect = item.getBoundingClientRect();
+            const itemMidPoint = itemRect.top + (itemRect.height / 2);
+            if (iconCenterY >= itemMidPoint) {
+                item.classList.add('is-active');
+                if (itemContent) itemContent.classList.add('is-active');
+            } else {
+                item.classList.remove('is-active');
+                if (itemContent) itemContent.classList.remove('is-active');
+            }
+        });
     });
 });
