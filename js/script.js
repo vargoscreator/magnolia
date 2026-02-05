@@ -186,27 +186,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const networkLine = document.querySelector('.network-line');
     const lineIcon = document.querySelector('.network-line-icon');
     const networkItems = document.querySelectorAll('.network__item');
-
     window.addEventListener('scroll', () => {
         if (!networkBlock || !lineIcon) return;
-
         const rect = networkBlock.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-
+        const isMobile = window.innerWidth < 769;
         let progress = (windowHeight / 1.8 - rect.top) / rect.height;
         progress = Math.max(0, Math.min(1, progress));
         const percentage = progress * 98;
-
         lineIcon.style.top = `${percentage}%`;
         networkLine.style.setProperty('--line-height', `${percentage + 0.4}%`);
-
         const iconCenterY = lineIcon.getBoundingClientRect().top + (lineIcon.offsetHeight / 2);
-
         networkItems.forEach((item) => {
             const itemContent = item.querySelector('.network__item-content');
             const itemRect = item.getBoundingClientRect();
-            const itemMidPoint = itemRect.top + (itemRect.height / 2);
-            if (iconCenterY >= itemMidPoint) {
+            const triggerPoint = isMobile 
+                ? itemRect.top 
+                : itemRect.top + (itemRect.height / 2);
+
+            if (iconCenterY >= triggerPoint) {
                 item.classList.add('is-active');
                 if (itemContent) itemContent.classList.add('is-active');
             } else {
@@ -242,3 +240,63 @@ if (closeBtn && menu) {
         menu.classList.remove('active');
     });
 }
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.contact__form-page');
+    const contactSection = document.querySelector('.contact');
+    const contactInner = document.querySelector('.contact__inner');
+    function handleFormPosition() {
+        const windowWidth = window.innerWidth;
+        if (windowWidth < 769) {
+            if (form.parentElement !== contactSection) {
+                contactSection.appendChild(form);
+            }
+        } else {
+            if (form.parentElement !== contactInner) {
+                contactInner.appendChild(form);
+            }
+        }
+    }
+
+    handleFormPosition();
+    window.addEventListener('resize', handleFormPosition);
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.contact__form-page');
+    const contactSection = document.querySelector('.contact');
+    const contactInner = document.querySelector('.contact__inner');
+    const langBlock = document.querySelector('.header__lang');
+    const supportBlock = document.querySelector('.header__support');
+    const headerMenu = document.querySelector('.header__menu-inner');
+    const headerContent = document.querySelector('.header__content');
+    function handleResponsiveElements() {
+        const windowWidth = window.innerWidth;
+        if (form && contactSection && contactInner) {
+            if (windowWidth < 768) {
+                if (form.parentElement !== contactSection) contactSection.appendChild(form);
+            } else {
+                if (form.parentElement !== contactInner) contactInner.appendChild(form);
+            }
+        }
+        if (langBlock && supportBlock && headerMenu && headerContent) {
+            if (windowWidth < 769) {
+                if (langBlock.parentElement !== headerMenu) {
+                    headerMenu.appendChild(langBlock);
+                    headerMenu.appendChild(supportBlock);
+                }
+            } else {
+                if (langBlock.parentElement !== headerContent) {
+                    const burger = document.querySelector('.header__burger');
+                    headerContent.insertBefore(langBlock, burger);
+                    headerContent.insertBefore(supportBlock, burger);
+                }
+            }
+        }
+    }
+    handleResponsiveElements();
+    window.addEventListener('resize', handleResponsiveElements);
+});
