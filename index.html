@@ -15,63 +15,69 @@
                     <img src="img/logo.svg" alt="">
                 </a>
                 <nav class="header__menu">
-                    <ul>
-                        <li class="menu-item menu-item-has-children">
-                            <a href="#">Про нас <span></span></a>
-                            <div class="sub-menu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Візія та місія</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Наші цінності</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Команда</a>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <a href="#">Історія</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Наші нагороди</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Наглядова рада</a>
-                                    </li>
-                                </ul>
+                    <button class="header__menu-close"></button>
+                        <div class="header__menu-inner">
+                            <div class="header__menu-logo">
+                                <img src="img/logo.svg" alt="">
                             </div>
-                        </li>
-                        <li class="menu-item menu-item-has-children">
-                            <a href="#">Діяльність <span></span></a>
-                            <div class="sub-menu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Напрямки діяльності</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Звіти</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Аудит</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">Новини про нас</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">Медіа-платформа</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">Партнери</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">Контакти</a>
-                        </li>
-                    </ul>
+                            <ul>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Про нас <span></span></a>
+                                    <div class="sub-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Візія та місія</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Наші цінності</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Команда</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Історія</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Наші нагороди</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Наглядова рада</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Діяльність <span></span></a>
+                                    <div class="sub-menu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Напрямки діяльності</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Звіти</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Аудит</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Новини про нас</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Медіа-платформа</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Партнери</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Контакти</a>
+                                </li>
+                            </ul>
+                        </div>
                 </nav>
                 <div class="header__content">
                     <div class="header__lang">
@@ -85,6 +91,7 @@
                             <a class="header__support-link" href="#">Монобанка</a>
                         </div>
                     </div>
+                    <button class="header__burger"></button>
                 </div>
             </div>
         </div>
@@ -320,38 +327,40 @@
                         <h2 class="news__title title">Новини про нас</h2>
                         <a class="news__btn btn" href="#">Читати далі</a>
                     </div>
-                    <div class="news__block">
-                        <div class="news__item">
-                            <a class="news__item-image" href="#">
-                                <img src="img/news.png" alt="">
-                            </a>
-                            <div class="news__item-content">
-                                <a class="news__item-title" href="#">
-                                    <h3>Сила спільнодії: як бізнес, громадська ініціатива та українці повертають додому зниклих дітей</h3>
+                    <div class="news__swiper">
+                        <div class="swiper-wrapper">
+                            <div class="news__item swiper-slide">
+                                <a class="news__item-image" href="#">
+                                    <img src="img/news.png" alt="">
                                 </a>
-                                <p class="news__item-date">08.12.2025</p>
+                                <div class="news__item-content">
+                                    <a class="news__item-title" href="#">
+                                        <h3>Сила спільнодії: як бізнес, громадська ініціатива та українці повертають додому зниклих дітей</h3>
+                                    </a>
+                                    <p class="news__item-date">08.12.2025</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-image" href="#">
-                                <img src="img/news.png" alt="">
-                            </a>
-                            <div class="news__item-content">
-                                <a class="news__item-title" href="#">
-                                    <h3>Мін’юст та ВГО Магнолія» підписали Меморандум про співпрацю задля повернення депортованих дітей</h3>
+                            <div class="news__item swiper-slide">
+                                <a class="news__item-image" href="#">
+                                    <img src="img/news.png" alt="">
                                 </a>
-                                <p class="news__item-date">08.12.2025</p>
+                                <div class="news__item-content">
+                                    <a class="news__item-title" href="#">
+                                        <h3>Мін’юст та ВГО Магнолія» підписали Меморандум про співпрацю задля повернення депортованих дітей</h3>
+                                    </a>
+                                    <p class="news__item-date">08.12.2025</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-image" href="#">
-                                <img src="img/news.png" alt="">
-                            </a>
-                            <div class="news__item-content">
-                                <a class="news__item-title" href="#">
-                                    <h3>Сила спільнодії: як бізнес, громадська ініціатива та українці повертають додому зниклих дітей</h3>
+                            <div class="news__item swiper-slide">
+                                <a class="news__item-image" href="#">
+                                    <img src="img/news.png" alt="">
                                 </a>
-                                <p class="news__item-date">08.12.2025</p>
+                                <div class="news__item-content">
+                                    <a class="news__item-title" href="#">
+                                        <h3>Сила спільнодії: як бізнес, громадська ініціатива та українці повертають додому зниклих дітей</h3>
+                                    </a>
+                                    <p class="news__item-date">08.12.2025</p>
+                                </div>
                             </div>
                         </div>
                     </div>

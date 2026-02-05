@@ -35,6 +35,51 @@ new Swiper('.hero__slider', {
     },
 });
 
+new Swiper('.news__swiper', {
+    loop: true,
+    spaceBetween: 12,
+    slidesPerView: 1,
+    breakpoints: {
+        481: {
+            slidesPerView: 2,
+            spaceBetween: 18
+        },
+        1025: {
+            slidesPerView: 3,
+            spaceBetween: 23
+        },
+    }
+});
+
+let swiperInstance = null;
+function initOrDestroySwiper() {
+    const windowWidth = window.innerWidth;
+    const sliderSelector = '.article__latest-block';
+    if (windowWidth <= 1024) {
+        if (!swiperInstance) {
+            swiperInstance = new Swiper(sliderSelector, {
+                loop: true,
+                spaceBetween: 12,
+                slidesPerView: 1,
+                breakpoints: {
+                    481: {
+                        slidesPerView: 2,
+                        spaceBetween: 18
+                    },
+                }
+            });
+        }
+    } else {
+        if (swiperInstance) {
+            swiperInstance.destroy(true, true);
+            swiperInstance = null;
+        }
+    }
+}
+
+window.addEventListener('load', initOrDestroySwiper);
+window.addEventListener('resize', initOrDestroySwiper);
+
 document.addEventListener('click', function (event) {
     const supportBlock = document.querySelector('.header__support');
     const supportSelected = document.querySelector('.header__support-selected');
@@ -148,12 +193,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const rect = networkBlock.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        let progress = (windowHeight / 2 - rect.top) / rect.height;
+        let progress = (windowHeight / 1.8 - rect.top) / rect.height;
         progress = Math.max(0, Math.min(1, progress));
         const percentage = progress * 98;
 
         lineIcon.style.top = `${percentage}%`;
-        networkLine.style.setProperty('--line-height', `${percentage}%`);
+        networkLine.style.setProperty('--line-height', `${percentage + 0.4}%`);
 
         const iconCenterY = lineIcon.getBoundingClientRect().top + (lineIcon.offsetHeight / 2);
 
@@ -171,3 +216,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+document.querySelectorAll('.menu-item-has-children > a span').forEach(arrow => {
+    arrow.addEventListener('click', function(e) {
+        if (window.innerWidth < 1025) {
+            e.preventDefault();
+            e.stopPropagation();
+            const parentLi = this.closest('.menu-item-has-children');
+            parentLi.classList.toggle('active');
+        }
+    });
+});
+
+const burger = document.querySelector('.header__burger');
+const menu = document.querySelector('.header__menu');
+const closeBtn = document.querySelector('.header__menu-close');
+if (burger && menu) {
+    burger.addEventListener('click', () => {
+        menu.classList.add('active');
+    });
+}
+if (closeBtn && menu) {
+    closeBtn.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
+}
