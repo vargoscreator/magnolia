@@ -24,6 +24,7 @@ awardsItems.forEach(item => {
 new Swiper('.hero__slider', {
     loop: true,
     spaceBetween: 20,
+    speed: 800,
     autoplay: { delay: 3000, disableOnInteraction: false },
     navigation: {
         nextEl: '.hero__slider-next',
