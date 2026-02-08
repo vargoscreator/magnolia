@@ -1260,6 +1260,7 @@ a.contact__info-descr:hover{
 }
 .news__block,
 .news__swiper{
+    overflow: hidden;
     margin-top: 3.646vw;
 }
 .news__item{
@@ -1468,6 +1469,7 @@ a.contact__info-descr:hover{
 .activity__item-image{
     max-width: 38.021vw;
     width: 100%;
+    overflow: hidden;
     height: auto;
     display: flex;
     align-items: center;
@@ -1588,6 +1590,7 @@ a.contact__info-descr:hover{
 .about{
     position: relative;   
     z-index: 1;
+    overflow: hidden;
     padding: 11.354vw 0 0;
 }
 .about__bg{
@@ -2153,6 +2156,9 @@ a.contact__info-descr:hover{
     bottom: 2.5vw !important;
     z-index: 10;
 }
+.hero__slide{
+    overflow: hidden;
+}
 .hero__slider-prev{
     position: absolute;
     top: 50%;
@@ -2220,10 +2226,13 @@ a.contact__info-descr:hover{
     min-height: 48.802vw;
 }
 .hero__slide-btn {
+    margin-top: auto;
+}
+.hero__slide-btn .btn{
+    width: 100%;
     max-width: max-content;
     padding: 0.938vw 1.667vw;
     font-size: 0.938vw;
-    margin-top: auto;
 }
 
 /* partner-slider */
@@ -3634,7 +3643,7 @@ a.contact__info-descr:hover{
         top: 15.43vw;
         left: 3.906vw;
     }
-    .hero__slide-btn {
+    .hero__slide-btn .btn{
         padding: 1.367vw 2.441vw;
         font-size: 1.172vw;
     }
@@ -4929,7 +4938,7 @@ a.contact__info-descr:hover{
         top: 110px;
         left: 20px;
     }
-    .hero__slide-btn {
+    .hero__slide-btn .btn{
         padding: 14px 25px;
         font-size: 12px;
     }
