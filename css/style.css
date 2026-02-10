@@ -2215,18 +2215,30 @@ a.contact__info-descr:hover{
     max-width: 36.823vw;
     display: flex;
     align-items: center;
+    height: 12.135vw;
+    min-height: 9.896vw;
 }
 .hero__slide-logo img{
-    width: 100%;
+    max-width: 100%;
+    width: auto;
+    max-height: 100%;
+    height: 100%;
 }
 .hero__slide-inner{
-    padding: 20.833vw 1.563vw 6.042vw 4vw;
+    padding: 15vw 1.563vw 6.042vw 4vw;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
     gap: 2.083vw;
     min-height: 48.802vw;
+}
+.hero__slide-title{
+    color: #611243;
+    font-size: 2.813vw;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 45.521vw;
 }
 .hero__slide-btn {
     margin-top: auto;
@@ -3641,7 +3653,7 @@ a.contact__info-descr:hover{
         background-size: 42.969vw;
     }
     .hero__slide-inner{
-        padding: 32.324vw 2.93vw 8.789vw;
+        padding: 20vw 2.93vw 8.789vw;
         gap: 3.906vw;
         min-height: 71.484vw;
     }
@@ -3901,6 +3913,12 @@ a.contact__info-descr:hover{
         order: 1;
         padding-bottom: 38px;
     }
+    .header-scrolled .header__burger{
+        width: 6.883vw;
+        height: 6.883vw;
+        min-width: 6.883vw;
+    }
+
 }
 .footer__logo-mobile{
     display: none;
@@ -4010,7 +4028,8 @@ a.contact__info-descr:hover{
         align-items: start;
         margin: auto 0 auto;
     }
-    .header__burger{
+    .header__burger,
+    .header-scrolled .header__burger{
         background-size: 23px;
         width: 48px;
         height: 48px;
@@ -4944,11 +4963,13 @@ a.contact__info-descr:hover{
     }
     .hero__slide-inner{
         padding: 180px 0 70px;
-        gap: 40px;
+        gap: 20px;
         min-height: 600px;
     }
-    .hero__slider-prev{
-        display: none;
+    .hero__slide-title {
+        font-size: 22px;
+        max-width: 100%;
+        padding-right: 50px;
     }
     .hero .breadcrumps__inner{
         top: 110px;
@@ -4959,10 +4980,12 @@ a.contact__info-descr:hover{
         font-size: 12px;
     }
     .hero__slide-bg::after {
-        width: 80%;
+        width: 120%;
     }
     .hero__slide-logo{
         max-width: 268px;
+        height: 110px;
+        min-height: 70px;
     }
     .slider-pagination.swiper-pagination-clickable.swiper-pagination-bullets{
         gap: 11px;
@@ -5162,6 +5185,11 @@ a.contact__info-descr:hover{
         font-size: 16px;
     }
 }
+@media (max-width: 480px) {
+    .hero__slider-prev{
+        display: none;
+    }
+}
 @media (max-width: 440px) {
     .footer__inner::before{
         height: 100%;
@@ -5193,9 +5221,4 @@ input:-webkit-autofill {
 .header-scrolled .header__content .header__lang,
 .header-scrolled .header__logo{
     display: none;
-}
-.header-scrolled .header__burger{
-    width: 6.883vw;
-    height: 6.883vw;
-    min-width: 6.883vw;
 }
