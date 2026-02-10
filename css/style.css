@@ -720,11 +720,7 @@ a.contact__info-descr:hover{
     flex-direction: column;
     gap: 0.729vw;
     align-items: start;
-<<<<<<< HEAD
-    padding: 2.083vw 1.083vw 1.042vw 1.667vw;
-=======
     padding: 2.283vw 1.083vw 0.842vw 1.667vw;
->>>>>>> 8954960 (fix)
     width: 100%;
 }
 .footer__support-link{
@@ -3840,8 +3836,6 @@ a.contact__info-descr:hover{
     .support__info-info.active .support__info-copy {
         background-size: 1.88vw;
     }
-<<<<<<< HEAD
-=======
     .header__menu-inner .header__lang-selected{
         display: inline-block !important;
         background-color: transparent;
@@ -3907,19 +3901,15 @@ a.contact__info-descr:hover{
         order: 1;
         padding-bottom: 38px;
     }
->>>>>>> 8954960 (fix)
 }
 .footer__logo-mobile{
     display: none;
 }
 @media (max-width: 768px) {
-<<<<<<< HEAD
-=======
     .header__content .header__support,
     .header__content .header__lang{
         display: none;
     }
->>>>>>> 8954960 (fix)
     html,body{
         font-size: 16px;
     }
@@ -4087,73 +4077,9 @@ a.contact__info-descr:hover{
         justify-content: space-between;
         height: 100%;
     }
-<<<<<<< HEAD
-    .header__lang{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        order: 1;
-        padding-bottom: 38px;
-    }
-    .header__lang-selected{
-        display: inline-block !important;
-        background-color: transparent;
-    }
-    .header__lang-selected.active{
-        background-color: #611243;
-    }
-    .header__support{
-        margin-top: auto;
-        position: relative;
-        z-index: 1;
-    }
-    .header__support-content{
-        left: 0;
-        right: 0;
-        width: 100%;
-        max-width: none;
-        top: calc(100% - 25px);
-        padding: 40px 40px 20px 32px;
-        gap: 20px;
-        border-radius: 0 0 20px 20px;
-        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
-        background-color: #F0D9EA;
-    }
-    .header__support-link{
-        color: #611243;
-    }
-    .header__support-selected{
-        justify-content: center;
-    }
-    .header__support-selected,
-    .header__lang-selected{
-        padding: 16px 24px;
-        gap: 12px;
-        border-radius: 50px;
-    }
-    .header__support-selected::after{
-        width: 19px;
-        height: 11px;
-        min-width: 19px;
-    }
     .header__inner::after{
         border-radius: 40px;
     }
-    .header__support-link{
-        gap: 14px;
-        color: #611243;
-    }
-    .header__support-link::after{
-        width: 23px;
-        height: 18px;
-        min-width: 23px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='18' viewBox='0 0 24 18' fill='none'%3E%3Cpath d='M14.9492 1.94922L21.9498 8.94979L14.9492 15.9504' stroke='%23611243' stroke-width='2.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19.9588 9.00009L2.28125 9' stroke='%23611243' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E");
-    }
-=======
-    .header__inner::after{
-        border-radius: 40px;
-    }
->>>>>>> 8954960 (fix)
     /* contact */
     .contact{
         padding: 0;
@@ -4277,10 +4203,7 @@ a.contact__info-descr:hover{
         padding-bottom: 278px;
         position: relative;
         z-index: 10;
-<<<<<<< HEAD
-=======
         overflow: hidden;
->>>>>>> 8954960 (fix)
     }
     .footer__start{
         gap: 40px;
@@ -4297,18 +4220,11 @@ a.contact__info-descr:hover{
         background-repeat: no-repeat;
         background-size: contain;
         width: 100%;
-<<<<<<< HEAD
-        height: 100%;
-        inset: 0;
-        background-position: center bottom;
-        background-size: contain;
-=======
         height: 105%;
         inset: 0;
         background-position: center bottom;
         background-size: contain;
         z-index: -1;
->>>>>>> 8954960 (fix)
     }
     .footer__logo{
         display: none;
@@ -4987,12 +4903,6 @@ a.contact__info-descr:hover{
     }
     .supervisory{
         padding: 36px 0;
-<<<<<<< HEAD
-    }
-    .supervisory__title{
-        text-align: center;
-=======
->>>>>>> 8954960 (fix)
     }
     .supervisory__block{
         margin-top: 36px;
@@ -5252,8 +5162,6 @@ a.contact__info-descr:hover{
         font-size: 16px;
     }
 }
-<<<<<<< HEAD
-=======
 @media (max-width: 440px) {
     .footer__inner::before{
         height: 100%;
@@ -5291,4 +5199,3 @@ input:-webkit-autofill {
     height: 6.883vw;
     min-width: 6.883vw;
 }
->>>>>>> 8954960 (fix)
