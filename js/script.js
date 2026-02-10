@@ -1,14 +1,10 @@
 const header = document.querySelector('header');
 let lastScrollTop = 0;
-
 function handleHeader() {
   const currentScroll = window.scrollY;
   const windowWidth = window.innerWidth;
-
   if (windowWidth > 1024) {
-    // ЛОГИКА ДЛЯ ПК: скрываем/показываем в зависимости от направления
-    header.classList.remove('header-scrolled'); // Убираем мобильный класс
-
+    header.classList.remove('header-scrolled');
     if (currentScroll < lastScrollTop) {
       header.classList.remove('header-scrolled-pc');
     } 
@@ -16,8 +12,7 @@ function handleHeader() {
       header.classList.add('header-scrolled-pc');
     }
   } else {
-    // ЛОГИКА ДЛЯ МОБИЛЬНЫХ: просто добавляем класс при скролле
-    header.classList.remove('header-scrolled-pc'); // Убираем ПК класс
+    header.classList.remove('header-scrolled-pc');
     
     if (currentScroll > 50) {
       header.classList.add('header-scrolled');
