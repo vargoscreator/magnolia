@@ -1,4 +1,37 @@
+const header = document.querySelector('header');
+let lastScrollTop = 0;
 
+function handleHeader() {
+  const currentScroll = window.scrollY;
+  const windowWidth = window.innerWidth;
+
+  if (windowWidth > 1024) {
+    // ЛОГИКА ДЛЯ ПК: скрываем/показываем в зависимости от направления
+    header.classList.remove('header-scrolled'); // Убираем мобильный класс
+
+    if (currentScroll < lastScrollTop) {
+      header.classList.remove('header-scrolled-pc');
+    } 
+    else if (currentScroll > 100) {
+      header.classList.add('header-scrolled-pc');
+    }
+  } else {
+    // ЛОГИКА ДЛЯ МОБИЛЬНЫХ: просто добавляем класс при скролле
+    header.classList.remove('header-scrolled-pc'); // Убираем ПК класс
+    
+    if (currentScroll > 50) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}
+
+window.addEventListener('load', handleHeader);
+window.addEventListener('scroll', handleHeader);
+window.addEventListener('resize', handleHeader);
 
 const awardsItems = document.querySelectorAll('.awards__info');
 awardsItems.forEach(item => {
@@ -43,7 +76,7 @@ new Swiper('.news__swiper', {
     spaceBetween: 12,
     slidesPerView: 1,
     breakpoints: {
-        481: {
+        769: {
             slidesPerView: 2,
             spaceBetween: 18
         },
@@ -84,14 +117,23 @@ window.addEventListener('load', initOrDestroySwiper);
 window.addEventListener('resize', initOrDestroySwiper);
 
 document.addEventListener('click', function (event) {
-    const supportBlock = document.querySelector('.header__support');
-    const supportSelected = document.querySelector('.header__support-selected');
-    if (supportSelected.contains(event.target)) {
-        supportBlock.classList.toggle('active');
-    } 
-    else if (!supportBlock.contains(event.target)) {
-        supportBlock.classList.remove('active');
+    // 1. Ищем нажатый элемент-переключатель (selected)
+    const toggle = event.target.closest('.header__support-selected, .header__lang-selected');
+    
+    // 2. Ищем родительский контейнер (весь блок меню)
+    const currentBlock = event.target.closest('.header__support, .header__lang');
+
+    if (toggle && currentBlock) {
+        // Если кликнули по переключателю — переключаем класс 'active' у родителя
+        currentBlock.classList.toggle('active');
     }
+
+    // 3. Закрываем все остальные блоки при клике вовне
+    document.querySelectorAll('.header__support, .header__lang').forEach(block => {
+        if (block !== currentBlock) {
+            block.classList.remove('active');
+        }
+    });
 });
 
 document.addEventListener('click', function (event) {
@@ -145,20 +187,16 @@ if(document.querySelector('.feedback-more')){
 }
 
 
-document.querySelectorAll('.support__info-copy').forEach(copyBtn => {
-    copyBtn.addEventListener('click', function() {
-        const parentInfo = this.closest('.support__info-info');
-        const tempNode = parentInfo.cloneNode(true);
-        const btnInClone = tempNode.querySelector('.support__info-copy');
-        if (btnInClone) btnInClone.remove();
-        const textToCopy = tempNode.innerText.trim();
+document.querySelectorAll('.support__info-info').forEach(infoBlock => {
+    infoBlock.addEventListener('click', function() {
+        const textToCopy = this.innerText.trim();
         navigator.clipboard.writeText(textToCopy).then(() => {
-            parentInfo.classList.add('active');
+            this.classList.add('active');
             setTimeout(() => {
-                parentInfo.classList.remove('active');
+                this.classList.remove('active');
             }, 2000);
         }).catch(err => {
-            console.error(err);
+            console.error('Ошибка копирования:', err);
         });
     });
 });
@@ -272,10 +310,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.contact__form-page');
     const contactSection = document.querySelector('.contact');
     const contactInner = document.querySelector('.contact__inner');
-    const langBlock = document.querySelector('.header__lang');
-    const supportBlock = document.querySelector('.header__support');
-    const headerMenu = document.querySelector('.header__menu-inner');
-    const headerContent = document.querySelector('.header__content');
     function handleResponsiveElements() {
         const windowWidth = window.innerWidth;
         if (form && contactSection && contactInner) {
@@ -283,20 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (form.parentElement !== contactSection) contactSection.appendChild(form);
             } else {
                 if (form.parentElement !== contactInner) contactInner.appendChild(form);
-            }
-        }
-        if (langBlock && supportBlock && headerMenu && headerContent) {
-            if (windowWidth < 769) {
-                if (langBlock.parentElement !== headerMenu) {
-                    headerMenu.appendChild(langBlock);
-                    headerMenu.appendChild(supportBlock);
-                }
-            } else {
-                if (langBlock.parentElement !== headerContent) {
-                    const burger = document.querySelector('.header__burger');
-                    headerContent.insertBefore(langBlock, burger);
-                    headerContent.insertBefore(supportBlock, burger);
-                }
             }
         }
     }
@@ -388,7 +408,7 @@ function initScrollAnimations() {
     );
 
     const newsHeader = gsap.timeline();
-    newsHeader.from(".breadcrumps__inner li", { opacity: 0, x: -10, stagger: 0.1, duration: 0.5 })
+    newsHeader.from(".breadcrumps__inner", { opacity: 0, x: -10, stagger: 0.1, duration: 0.5 })
               .from(".news__title", { opacity: 0, y: 20, duration: 0.6 }, "-=0.3");
 
     gsap.from(".news__swiper .news__item", {

@@ -720,7 +720,11 @@ a.contact__info-descr:hover{
     flex-direction: column;
     gap: 0.729vw;
     align-items: start;
+<<<<<<< HEAD
     padding: 2.083vw 1.083vw 1.042vw 1.667vw;
+=======
+    padding: 2.283vw 1.083vw 0.842vw 1.667vw;
+>>>>>>> 8954960 (fix)
     width: 100%;
 }
 .footer__support-link{
@@ -1186,6 +1190,7 @@ a.contact__info-descr:hover{
 }
 .support__info-info{
     gap: 0.521vw;
+    cursor: pointer;
     padding: 1.302vw 1.146vw;
     min-height: 3.802vw;
     border-radius: 1.042vw;
@@ -1788,6 +1793,8 @@ a.contact__info-descr:hover{
     flex-direction: column;
     gap: 1.563vw;
 }
+.history__block-content h4 > a:not(:hover),
+.history__block-content h5 > a:not(:hover),
 .history__block-content > p > a:not(:hover){
     text-decoration: underline;
 }
@@ -2131,7 +2138,7 @@ a.contact__info-descr:hover{
     content: '';
     position: absolute;
     border-radius: 0 2.083vw 2.083vw 0;
-    background-image: url("data:image/svg+xml,%0A%3Csvg width='347' height='517' viewBox='0 0 347 517' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M249.625 4.15589e-06L344.59 0L344.59 95.1412C319.396 95.1198 295.242 85.0865 277.435 67.2464C259.628 49.4063 249.625 25.219 249.625 4.15589e-06Z' fill='%23C93D9E'/%3E%3Cpath d='M344.59 420.961V516.021H249.625C249.646 490.816 259.659 466.65 277.463 448.827C295.268 431.004 319.41 420.982 344.59 420.961Z' fill='%23C93D9E'/%3E%3Cpath d='M0.000126036 515.778C-0.037621 466.946 10.2497 418.657 30.1876 374.079C50.1256 329.501 79.2634 289.64 115.691 257.111C79.2553 224.589 50.1117 184.729 30.173 140.149C10.4492 96.0499 0.17564 48.3176 0.00303318 0.0214844L55.8575 0.0214819C55.7729 42.541 65.0315 84.5673 82.9874 123.125C101.165 162.159 127.802 196.661 160.965 224.131C186.603 207.852 214.275 195.024 243.267 185.978C210.146 167.527 182.556 140.564 163.354 107.878C144.151 75.1916 134.032 37.9687 134.043 0.060541L176.65 0.0605392C176.65 45.081 194.537 88.2575 226.376 120.092C258.216 151.926 301.399 169.811 346.427 169.811L346.427 225.667C299.93 225.555 254.089 236.646 212.787 258C254.089 279.354 299.93 290.446 346.427 290.334L346.427 346.27C301.399 346.27 258.216 364.155 226.376 395.989C194.537 427.824 176.65 471.001 176.65 516.021L134.043 516.021C134.032 478.113 144.151 440.89 163.354 408.203C182.556 375.517 210.146 348.554 243.267 330.104C214.265 321.048 186.59 308.191 160.965 291.869C128.043 319.155 101.552 353.374 83.3839 392.079C65.2162 430.784 55.8191 473.023 55.8644 515.778L0.000126036 515.778Z' fill='%23C93D9E'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='345' height='516' viewBox='0 0 345 516' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_106_19430)'%3E%3Cpath d='M249.625 4.15589e-06L344.59 0V95.1412C319.396 95.1198 295.242 85.0865 277.435 67.2464C259.628 49.4063 249.625 25.219 249.625 4.15589e-06Z' fill='%23C93D9E'/%3E%3Cpath d='M344.59 420.961V516.021H249.625C249.646 490.816 259.659 466.65 277.463 448.827C295.268 431.004 319.41 420.982 344.59 420.961Z' fill='%23C93D9E'/%3E%3Cpath d='M0.000103503 515.778C-0.0376435 466.946 10.2497 418.657 30.1876 374.079C50.1256 329.501 79.2634 289.64 115.691 257.111C79.2553 224.589 50.1117 184.729 30.173 140.149C10.4492 96.0499 0.175617 48.3176 0.00301065 0.0214869L55.8575 0.0214844C55.7729 42.541 65.0315 84.5673 82.9874 123.125C101.165 162.159 127.802 196.661 160.965 224.131C186.603 207.852 214.275 195.024 243.267 185.978C210.146 167.527 182.556 140.564 163.354 107.878C144.151 75.1916 134.032 37.9687 134.043 0.0605435L176.65 0.0605417C176.65 45.081 194.537 88.2575 226.376 120.092C258.216 151.926 301.399 169.811 346.427 169.811V225.667C299.93 225.555 254.089 236.646 212.787 258C254.089 279.354 299.93 290.446 346.427 290.334V346.27C301.399 346.27 258.216 364.155 226.376 395.989C194.537 427.824 176.65 471.001 176.65 516.021H134.043C134.032 478.113 144.151 440.89 163.354 408.203C182.556 375.517 210.146 348.554 243.267 330.104C214.265 321.048 186.59 308.191 160.965 291.869C128.043 319.155 101.552 353.374 83.3839 392.079C65.2162 430.784 55.8191 473.023 55.8644 515.778H0.000103503Z' fill='%23C93D9E'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_106_19430'%3E%3Crect width='345' height='516' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
     top: 0;
     right: 0;
     bottom: 0;
@@ -2633,6 +2640,7 @@ a.contact__info-descr:hover{
 .header__menu-close,
 .header__menu-logo,
 .header__burger{
+    transition: none;
     display: none;
 }
 @media (min-width: 1025px) {
@@ -2663,6 +2671,10 @@ a.contact__info-descr:hover{
         gap: 2.604vw;
         display: flex;
         flex-direction: column;
+    }
+    .header__menu-inner .header__support,
+    .header__menu-inner .header__lang{
+        display: none;
     }
 }
 @media (max-width: 1024px) {
@@ -2850,14 +2862,14 @@ a.contact__info-descr:hover{
         height: 1.074vw;
         min-width: 1.855vw;
     }
-    .header__support-content{
+    .header__support-content {
         top: calc(100% - 1.953vw);
-        padding: 3.906vw 3.906vw 1.953vw 3.125vw;
+        padding: 3.506vw 2.906vw 1.953vw 2.325vw;
         gap: 1.367vw;
         border-radius: 0 0 1.953vw 1.953vw;
         box-shadow: 0 0 1.465vw 0 rgba(0, 0, 0, 0.25);
-        max-width: 21.484vw;
-        right: 2.93vw;
+        max-width: 18.484vw;
+        right: 9.13vw;
     }
     .header__inner::after{
         border-radius: 3.906vw;
@@ -2924,6 +2936,7 @@ a.contact__info-descr:hover{
     }
     .contact__form-box{
         gap: 1.953vw;
+        grid-template-columns: 1fr;
     }
     .contact .contact__form-box{
         grid-template-columns: 1fr;
@@ -3013,7 +3026,7 @@ a.contact__info-descr:hover{
     .footer__support-content{
         border-radius: 0 0 2.441vw 2.441vw;
         gap: 1.953vw;
-        padding: 3.906vw 3.125vw 1.953vw;
+        padding: 4.506vw 3.125vw 1.953vw;
     }
     .footer__support-link{
         gap: 1.367vw;
@@ -3604,9 +3617,6 @@ a.contact__info-descr:hover{
     .supervisory{
         padding: 6.836vw 0 8.398vw;
     }
-    .supervisory__title{
-
-    }
     .supervisory__block{
         margin-top: 5.273vw;
         gap: 3.906vw;
@@ -3830,11 +3840,86 @@ a.contact__info-descr:hover{
     .support__info-info.active .support__info-copy {
         background-size: 1.88vw;
     }
+<<<<<<< HEAD
+=======
+    .header__menu-inner .header__lang-selected{
+        display: inline-block !important;
+        background-color: transparent;
+    }
+    .header__menu-inner .header__lang-selected.active{
+        background-color: #611243;
+    }
+    .header__menu-inner .header__support-selected{
+        justify-content: center;
+    }
+    .header__menu-inner .header__support-selected,
+    .header__menu-inner .header__lang-selected{
+        padding: 16px 24px;
+        gap: 12px;
+        border-radius: 50px;
+    }
+    .header__menu-inner  .header__support-selected::after{
+        width: 19px;
+        height: 11px;
+        min-width: 19px;
+    }
+    .header__menu-inner .header__support{
+        margin-top: auto;
+        position: relative;
+        z-index: 1;
+    }
+    .header__menu-inner .header__support-content{
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: none;
+        top: calc(100% - 25px);
+        padding: 40px 40px 20px 32px;
+        gap: 20px;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+        background-color: #F0D9EA;
+    }
+    .header__menu-inner.header__support-link{
+        color: #611243;
+    }
+    .header__menu-inner .header__support-link{
+        gap: 14px;
+        color: #611243;
+    }
+    .header__menu-inner .header__support-link::after{
+        width: 23px;
+        height: 18px;
+        min-width: 23px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='18' viewBox='0 0 24 18' fill='none'%3E%3Cpath d='M14.9492 1.94922L21.9498 8.94979L14.9492 15.9504' stroke='%23611243' stroke-width='2.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19.9588 9.00009L2.28125 9' stroke='%23611243' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E");
+    }
+    .header__menu-inner{
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .header__menu-inner .header__lang{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        order: 1;
+        padding-bottom: 38px;
+    }
+>>>>>>> 8954960 (fix)
 }
 .footer__logo-mobile{
     display: none;
 }
 @media (max-width: 768px) {
+<<<<<<< HEAD
+=======
+    .header__content .header__support,
+    .header__content .header__lang{
+        display: none;
+    }
+>>>>>>> 8954960 (fix)
     html,body{
         font-size: 16px;
     }
@@ -4002,6 +4087,7 @@ a.contact__info-descr:hover{
         justify-content: space-between;
         height: 100%;
     }
+<<<<<<< HEAD
     .header__lang{
         display: flex;
         align-items: center;
@@ -4063,6 +4149,11 @@ a.contact__info-descr:hover{
         min-width: 23px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='18' viewBox='0 0 24 18' fill='none'%3E%3Cpath d='M14.9492 1.94922L21.9498 8.94979L14.9492 15.9504' stroke='%23611243' stroke-width='2.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19.9588 9.00009L2.28125 9' stroke='%23611243' stroke-width='2.7' stroke-linecap='round'/%3E%3C/svg%3E");
     }
+=======
+    .header__inner::after{
+        border-radius: 40px;
+    }
+>>>>>>> 8954960 (fix)
     /* contact */
     .contact{
         padding: 0;
@@ -4186,6 +4277,10 @@ a.contact__info-descr:hover{
         padding-bottom: 278px;
         position: relative;
         z-index: 10;
+<<<<<<< HEAD
+=======
+        overflow: hidden;
+>>>>>>> 8954960 (fix)
     }
     .footer__start{
         gap: 40px;
@@ -4202,10 +4297,18 @@ a.contact__info-descr:hover{
         background-repeat: no-repeat;
         background-size: contain;
         width: 100%;
+<<<<<<< HEAD
         height: 100%;
         inset: 0;
         background-position: center bottom;
         background-size: contain;
+=======
+        height: 105%;
+        inset: 0;
+        background-position: center bottom;
+        background-size: contain;
+        z-index: -1;
+>>>>>>> 8954960 (fix)
     }
     .footer__logo{
         display: none;
@@ -4884,9 +4987,12 @@ a.contact__info-descr:hover{
     }
     .supervisory{
         padding: 36px 0;
+<<<<<<< HEAD
     }
     .supervisory__title{
         text-align: center;
+=======
+>>>>>>> 8954960 (fix)
     }
     .supervisory__block{
         margin-top: 36px;
@@ -5146,3 +5252,43 @@ a.contact__info-descr:hover{
         font-size: 16px;
     }
 }
+<<<<<<< HEAD
+=======
+@media (max-width: 440px) {
+    .footer__inner::before{
+        height: 100%;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+    box-shadow: 0 0 0 1000px #fff inset !important;
+}
+input:-webkit-autofill {
+    -webkit-text-fill-color: #611243 !important;
+}
+.header{
+    transition: all .3s ease;
+}
+.header-scrolled-pc{
+    top: -200px;
+}
+.header-scrolled .header__inner {
+    max-width: max-content;
+    margin-left: auto;
+    padding: 0;
+}
+.header-scrolled .header__content .header__support,
+.header-scrolled .header__content .header__lang,
+.header-scrolled .header__logo{
+    display: none;
+}
+.header-scrolled .header__burger{
+    width: 6.883vw;
+    height: 6.883vw;
+    min-width: 6.883vw;
+}
+>>>>>>> 8954960 (fix)
