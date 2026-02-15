@@ -403,8 +403,7 @@ function initScrollAnimations() {
     );
 
     const newsHeader = gsap.timeline();
-    newsHeader.from(".breadcrumps__inner", { opacity: 0, x: -10, stagger: 0.1, duration: 0.5 })
-              .from(".news__title", { opacity: 0, y: 20, duration: 0.6 }, "-=0.3");
+    newsHeader.from(".news__title", { opacity: 0, y: 20, duration: 0.6 }, "-=0.3");
 
     gsap.from(".news__swiper .news__item", {
         scrollTrigger: {
